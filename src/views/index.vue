@@ -114,7 +114,8 @@ export default {
     width: 100%;
     height: 7.8125vw;
     // box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
-    display: flex;  
+    display: flex;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
     .logo {
       cursor: pointer;
       width: 400px;
@@ -122,7 +123,7 @@ export default {
       //   background: url("@/assets/logo.jpg") no-repeat;
       //   background-size: 100% 100%;
       display: flex;
-      flex:3.2;
+      flex:4.8;
       align-items: center;
       justify-content: center;
       img {
@@ -136,7 +137,7 @@ export default {
       justify-content: space-around;
       height: 100%;
       align-items: center;
-      padding: 0;
+      padding: 0 3vw;
       margin: 0;
       background: url("/images/navBg.jpg") no-repeat;
       background-size: 100% 100%;
@@ -147,7 +148,7 @@ export default {
         transition: all 0.3s;
         color: #fff;
         line-height: 2.2vw;
-        font-size: 1.4vw;
+        font-size: 0.9vw;
         list-style-type: none;
         cursor: pointer;
         &:hover {

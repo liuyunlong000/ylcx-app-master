@@ -21,7 +21,17 @@
           </a>
         </li>
       </ul>
-      <div class="page"></div>
+      <div class="page">
+        <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="total"
+            :page-size="queryForm.pageSize"
+            class="mt15"
+            :current-page="queryForm.pageNum"
+            @current-change="handleCurrentChange"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +42,14 @@ import Cookies from "js-cookie";
 export default {
   data() {
     return {
-      newsList:[]
+      newsList:[],
+      total:0,
+      queryForm :{
+        pageNum: 1,//当前页码
+        pageSize: 10,//每页大小
+        sortOrder:'desc',//排序方式
+        sortField:'releaseTime',//排序属性
+      }
     };
   },
   components: {},
@@ -41,9 +58,11 @@ export default {
   },
   methods: {
     getNewsList(){
-      news_list(10).then((response) => {
+      news_list(this.queryForm).then((response) => {
         if (response.code === 200) {
-          this.newsList=response.data;
+          this.newsList=response.data.list;
+          this.total=response.data.total;
+
         }
       });
     },
@@ -52,6 +71,15 @@ export default {
       Cookies.set("link", 'newscore');
       let infoUrl = this.$router.resolve({name: 'newsDetail', query: {id: item.nid}})
       window.open(infoUrl.href,'_blank');
+    },
+    handleCurrentChange(pageNum){
+      this.queryForm.pageNum=pageNum;
+      news_list(this.queryForm).then((response) => {
+        if (response.code === 200) {
+          this.newsList=response.data.list;
+          this.total=response.data.total;
+        }
+      });
     }
   },
 };

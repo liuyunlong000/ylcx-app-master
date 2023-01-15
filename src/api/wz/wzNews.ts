@@ -5,11 +5,11 @@ import request from '@/utils/request';
  * @param id
  * @returns {AxiosPromise}
  */
-export function news_list(count:number) {
+export function news_list(data:any) {
     return request({
-        url: '/wzNews/find_list',
-        method: 'get',
-        params:{count:count}
+        url: '/wzNews/find_list_by_page',
+        method: 'post',
+        data,
     });
 }
 export function news_id(id:number) {
@@ -24,11 +24,11 @@ export function news_id(id:number) {
  * @param id
  * @returns {AxiosPromise}
  */
-export function notice_list(count:number) {
+export function notice_list(data:any) {
     return request({
-        url: '/wzNotice/find_list',
-        method: 'get',
-        params:{count:count}
+        url: '/wzNotice/find_list_by_page',
+        method: 'post',
+        data,
     });
 }
 export function notice_id(id:number) {

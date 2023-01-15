@@ -182,43 +182,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
                             title: '',
                             auth: false,
                         }
-                    },
-                    {
-                        path: "/research/science",
-                        name: 'science',
-                        component: () => import("@/views/research/components/science.vue"),
-                        meta: {
-                            title: '',
-                            auth: false,
-                        }
-                    },
-                    {
-                        path: "/research/algorithm",
-                        name: 'algorithm',
-                        component: () => import("@/views/research/components/algorithm.vue"),
-                        meta: {
-                            title: '',
-                            auth: false,
-                        }
-                    },
-                    {
-                        path: "/research/net",
-                        name: 'net',
-                        component: () => import("@/views/research/components/net.vue"),
-                        meta: {
-                            title: '',
-                            auth: false,
-                        }
-                    },
-                    {
-                        path: "/research/computational",
-                        name: 'computational',
-                        component: () => import("@/views/research/components/computational.vue"),
-                        meta: {
-                            title: '',
-                            auth: false,
-                        }
-                    },
+                    }
                 ]
             },
             {
@@ -271,24 +235,6 @@ export const staticRoutes: Array<RouteRecordRaw> = [
                         path: "/platform/datanet",
                         name: 'datanet',
                         component: () => import("@/views/platform/components/datanet.vue"),
-                        meta: {
-                            title: '',
-                            auth: false,
-                        }
-                    },
-                    {
-                        path: "/platform/datarange",
-                        name: 'datarange',
-                        component: () => import("@/views/platform/components/datarange.vue"),
-                        meta: {
-                            title: '',
-                            auth: false,
-                        }
-                    },
-                    {
-                        path: "/platform/datacal",
-                        name: 'datacal',
-                        component: () => import("@/views/platform/components/datacal.vue"),
                         meta: {
                             title: '',
                             auth: false,

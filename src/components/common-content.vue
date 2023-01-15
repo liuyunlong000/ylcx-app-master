@@ -96,13 +96,13 @@ export default {
       .leftConent {
         display: flex;
         .name {
-          line-height: 8vw;
-          font-size: 1.9vw;
+          line-height: 6vw;
+          font-size: 1.7vw;
           font-weight: 700;
-          margin-top: -4vw;
+          margin-top: -3vw;
           color: #fff;
           text-align: center;
-          padding: 0 2vw;
+          padding: 0 1.5vw;
           background: url("/images/ti-bg.png") center center no-repeat;
           background-size: 100% 100%;
           white-space: nowrap;

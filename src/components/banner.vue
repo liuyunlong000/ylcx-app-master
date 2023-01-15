@@ -24,7 +24,7 @@ export default {
 .banner {
   width: 100%;
   height: 200px;
-  background: url("/images/banner.png") no-repeat;
-  background-size: 100% 100%;
+  background: url("/images/banner.png") center no-repeat;
+  background-size: cover !important;
 }
 </style>

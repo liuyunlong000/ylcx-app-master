@@ -125,6 +125,7 @@ export default {
       white-space: nowrap;
       text-overflow: ellipsis;
       margin:0.2vw 0;
+      color: #555656;
     }
     .img{
       overflow: hidden;

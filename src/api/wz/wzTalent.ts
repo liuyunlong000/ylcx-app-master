@@ -5,11 +5,11 @@ import request from '@/utils/request';
  * @param id
  * @returns {AxiosPromise}
  */
-export function dynamic_list(count:number) {
+export function dynamic_list(data:any) {
     return request({
-        url: '/wzPersonnelDynamic/find_list',
-        method: 'get',
-        params:{count:count}
+        url: '/wzPersonnelDynamic/find_list_by_page',
+        method: 'post',
+        data,
     });
 }
 export function dynamic_id(id:number) {
@@ -42,11 +42,11 @@ export function talent_id(id:number) {
  * @param id
  * @returns {AxiosPromise}
  */
-export function recruit_list(count:number) {
+export function recruit_list(data:any) {
     return request({
-        url: '/wzPersonnelRecruit/find_list',
-        method: 'get',
-        params:{count:count}
+        url: '/wzPersonnelRecruit/find_list_by_page',
+        method: 'post',
+        data
     });
 }
 export function recruit_id(id:number) {

@@ -84,7 +84,7 @@
             <span class="srt-title">{{ item.title }}</span>
           </li>
         </ul>
-        <img src="/images/bg3-1.png" alt="" />
+        <img src="/images/bg3-1.jpg" style="width: 857px;height: 590px" alt="" />
         <img src="/images/bg3-2.png" alt="" />
       </div>
     </section>
@@ -110,19 +110,19 @@
       </div>
       <div class="careers-content">
         <div class="left">
-          <a href>
+          <a href="javascript:void(0)">
             <img src="/images/r1.png" alt="" />
             <p>首席人才</p>
           </a>
-          <a href>
+          <a href="javascript:void(0)">
             <img src="/images/r2.png" alt="" />
             <p>领军人才</p>
           </a>
-          <a href>
+          <a href="javascript:void(0)">
             <img src="/images/r3.png" alt="" />
             <p>卓越人才</p>
           </a>
-          <a href>
+          <a href="javascript:void(0)">
             <img src="/images/r4.png" alt="" />
             <p>新锐人才</p>
           </a>
@@ -276,7 +276,7 @@ export default {
         img {
           opacity: 0;
           width: 100%;
-          height: 100%;
+          /*height: 100%;*/
         }
         .active {
           transition: all 0.8s;
@@ -513,7 +513,6 @@ export default {
         align-items: center;
         justify-content: center;
         font-size: 1.5vw;
-        font-weight: 700;
         // letter-spacing: 2px;
         text-decoration: none;
         background-color: transparent;

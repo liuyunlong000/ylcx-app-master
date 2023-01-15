@@ -116,11 +116,12 @@ ul {
       z-index: -1;
     }
     .left {
-      width: 140px;
+      width: 158px;
       overflow: hidden;
       img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
         transition: all 0.3s;
       }
     }

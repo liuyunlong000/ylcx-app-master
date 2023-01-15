@@ -18,7 +18,7 @@ export function banner_list() {
  */
 export function news_list(count:number) {
     return request({
-        url: '/wzNews/find_list_home',
+        url: '/wzNews/find_list',
         method: 'get',
         params:{count:count}
     });

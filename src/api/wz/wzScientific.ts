@@ -5,11 +5,11 @@ import request from '@/utils/request';
  * @param id
  * @returns {AxiosPromise}
  */
-export function scientific_list(count:number) {
+export function scientific_list(data:any) {
     return request({
-        url: '/wzScientificDynamic/find_list',
-        method: 'get',
-        params:{count:count}
+        url: '/wzScientificDynamic/find_list_by_page',
+        method: 'post',
+        data
     });
 }
 export function scientific_id(id:number) {

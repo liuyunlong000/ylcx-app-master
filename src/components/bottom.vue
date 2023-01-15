@@ -125,17 +125,17 @@ export default {
 					name:"国家科技部",
 					href:"https://www.most.gov.cn/index.html"
 				},
+        {
+          name:"国家自然科学基金委",
+          href:"https://www.nsfc.gov.cn/"
+        },
+        {
+          name:"国家工信部",
+          href:"https://wap.miit.gov.cn/"
+        },
 				{
 					name:"中央政府采购网",
 					href:"https://www.zycg.gov.cn/"
-				},
-				{
-					name:"国家自然科学基金委",
-					href:"https://www.nsfc.gov.cn/"
-				},
-				{
-					name:"国家工信部",
-					href:"https://wap.miit.gov.cn/"
 				}
 			]
 		},
@@ -147,13 +147,13 @@ export default {
 					href:"http://fzggw.ah.gov.cn/"
 				},
 				{
-					name:"合肥市发改委",
-					href:"http://drc.hefei.gov.cn/"
-				},
-				{
 					name:"安徽省科技厅",
 					href:"http://kjt.ah.gov.cn/"
 				},
+        {
+          name:"安徽省经信厅",
+          href:"http://jx.ah.gov.cn/"
+        },
 				{
 					name:"安徽省财政厅",
 					href:"http://czt.ah.gov.cn/"
@@ -162,15 +162,19 @@ export default {
 					name:"安徽省教育厅",
 					href:"http://jyt.ah.gov.cn/"
 				},
-				{
-					name:"安徽省经信厅",
-					href:"http://jx.ah.gov.cn/"
-				},
+        {
+          name:"合肥市发改委",
+          href:"http://drc.hefei.gov.cn/"
+        },
 			]
 		},
 		otherList:{
 			isShow:false,
 			data:[
+        {
+          name:"合肥综合性国家科学中心",
+          href:"http://www.hfcnsc.cn/home/index"
+        },
 				{
 					name:"中国科学技术大学",
 					href:"https://www.ustc.edu.cn/"
@@ -179,26 +183,22 @@ export default {
 					name:"合肥工业大学",
 					href:"http://www.hfut.edu.cn/"
 				},
+        {
+          name:"合肥综合性国家科学中心人工智能研究院",
+          href:"http://iai.ustc.edu.cn/iai/index.html"
+        },
+        {
+          name:"合肥综合性国家科学中心大健康研究院",
+          href:"https://www.ihm.ac.cn/"
+        },
+        {
+          name:"合肥综合性国家科学中心能源研究院",
+          href:"http://www.ie.ah.cn"
+        },
 				{
-					name:"合肥综合性国家科学中心",
-					href:"http://www.hfcnsc.cn/home/index"
-				},
-				{
-					name:"中国科学技术大学数据空间研究中心",
+					name:"RCDC数据空间研究中心",
 					href:"http://dspace.ustc.edu.cn/"
 				},
-				{
-					name:"合肥综合性国家科学中心大健康研究院；",
-					href:"https://www.ihm.ac.cn/"
-				},
-				{
-					name:"合肥综合性国家科学中心能源研究院；",
-					href:"http://www.ie.ah.cn"
-				},
-				{
-					name:"合肥综合性国家科学中心人工智能研究院",
-					href:"http://iai.ustc.edu.cn/iai/index.html"
-				}
 			]
 		}
 	};
@@ -240,7 +240,7 @@ footer{
 			.link-box{
 				cursor: pointer;
 				background-color: #fff;
-				width: 10.4vw;
+				width: 15.4vw;
 				margin-right: 5.2vw;    
 				padding: 0 0.5vw;
 				line-height: 1.8vw;

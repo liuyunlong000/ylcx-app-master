@@ -7,7 +7,7 @@ import other from '@/utils/other';
 import { dataDictMixin } from '@/utils/mixin/dataDictMixin';
 import { addDateRange, removeDateRange, parseTime, removePropFromMap, addPropToMap, expandTreeNode, convertTime } from '@/utils/common/tools';
 import ElementPlus from 'element-plus';
-/*import 'element-plus/dist/index.css';*/
+import 'element-plus/dist/index.css';
 /*import '/@/theme/index.scss';*/
 /*import "/@/assets/common.css";*/
 import mitt from 'mitt';
