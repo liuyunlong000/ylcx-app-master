@@ -43,3 +43,10 @@ export default {
   text-indent: 32px;
 }
 </style>
+<style>
+img {
+  border: none;
+  vertical-align: middle;
+  max-width: 100%;
+}
+</style>

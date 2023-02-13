@@ -7,7 +7,7 @@ import request from '@/utils/request';
  */
 export function dynamic_list(data:any) {
     return request({
-        url: '/wzPersonnelDynamic/find_list_by_page',
+        url: '/wzPersonnelDynamic/find_list_home',
         method: 'post',
         data,
     });
@@ -44,7 +44,7 @@ export function talent_id(id:number) {
  */
 export function recruit_list(data:any) {
     return request({
-        url: '/wzPersonnelRecruit/find_list_by_page',
+        url: '/wzPersonnelRecruit/find_list_home',
         method: 'post',
         data
     });

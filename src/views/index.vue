@@ -15,6 +15,7 @@
       <ul class="nav">
         <li
           v-for="item in navList"
+          :id="item.value"
           :key="item.value"
           :class="item.value == activeIndex ? 'active' : ''"
           @click="changeIndex(item.value)"
@@ -95,10 +96,136 @@ export default {
     }
   },
   mounted() {
-    /*const active = Cookies.get("active");
-    this.activeIndex = active ? active : "index";
-    this.$router.push("/" + this.activeIndex);*/
+    const route=this.$route;
+    if(route.path=='/index'){
+      if(this.activeIndex){
+        document.getElementById(this.activeIndex).className='';
+      }
+      document.getElementById('index').className='active';
+      this.activeIndex='index';
+    }
+    if(route.path=='/survey/overview'|| route.path=='/survey/structure' || route.path=='/survey/leader'){
+      if(this.activeIndex){
+        document.getElementById(this.activeIndex).className='';
+      }
+      document.getElementById('survey').className='active';
+      this.activeIndex='survey';
+    }
+    if(route.path=='/news/newscore'|| route.path=='/news/notice'){
+      if(this.activeIndex){
+        document.getElementById(this.activeIndex).className='';
+      }
+      document.getElementById('news').className='active';
+      this.activeIndex='news';
+    }
+    if(route.path=='/research/mathematical'){
+      if(this.activeIndex){
+        document.getElementById(this.activeIndex).className='';
+      }
+      document.getElementById('research').className='active';
+      this.activeIndex='research';
+    }
+    if(route.path=='/technological/industrial-data'){
+      if(this.activeIndex){
+        document.getElementById(this.activeIndex).className='';
+      }
+      document.getElementById('technological').className='active';
+      this.activeIndex='technological';
+    }
+    if(route.path=='/platform/datanet'){
+      if(this.activeIndex){
+        document.getElementById(this.activeIndex).className='';
+      }
+      document.getElementById('platform').className='active';
+      this.activeIndex='platform';
+    }
+    if(route.path=='/product/ylctx'){
+      if(this.activeIndex){
+        document.getElementById(this.activeIndex).className='';
+      }
+      document.getElementById('product').className='active';
+      this.activeIndex='product';
+    }
+    if(route.path=='/talent/talent'|| route.path=='/talent/recruit' || route.path=='/talent/dynamic'){
+      if(this.activeIndex){
+        document.getElementById(this.activeIndex).className='';
+      }
+      document.getElementById('talent').className='active';
+      this.activeIndex='talent';
+    }
+    if(route.path=='/scientific/dynamic'){
+      if(this.activeIndex){
+        document.getElementById(this.activeIndex).className='';
+      }
+      this.activeIndex='';
+    }
 
+  },
+  watch:{
+    $route(to,from){
+      if(to.path=='/index'){
+        if(this.activeIndex){
+          document.getElementById(this.activeIndex).className='';
+        }
+        document.getElementById('index').className='active';
+        this.activeIndex='index';
+      }
+      if(to.path=='/survey/overview'|| to.path=='/survey/structure' || to.path=='/survey/leader'){
+        if(this.activeIndex){
+          document.getElementById(this.activeIndex).className='';
+        }
+        document.getElementById('survey').className='active';
+        this.activeIndex='survey';
+      }
+      if(to.path=='/news/newscore' || to.path=='/news/notice'){
+        if(this.activeIndex){
+          document.getElementById(this.activeIndex).className='';
+        }
+        document.getElementById('news').className='active';
+        this.activeIndex='news';
+      }
+      if(to.path=='/scientific/dynamic'){
+        if(this.activeIndex){
+          document.getElementById(this.activeIndex).className='';
+        }
+        this.activeIndex='';
+      }
+      if(to.path=='/talent/talent' || to.path=='/talent/recruit' || to.path=='/talent/dynamic'){
+        if(this.activeIndex){
+          document.getElementById(this.activeIndex).className='';
+        }
+        document.getElementById('talent').className='active';
+        this.activeIndex='talent';
+      }
+      if(to.path=='/research/mathematical'){
+        if(this.activeIndex){
+          document.getElementById(this.activeIndex).className='';
+        }
+        document.getElementById('research').className='active';
+        this.activeIndex='research';
+      }
+      if(to.path=='/technological/industrial-data'){
+        if(this.activeIndex){
+          document.getElementById(this.activeIndex).className='';
+        }
+        document.getElementById('technological').className='active';
+        this.activeIndex='technological';
+      }
+      if(to.path=='/platform/datanet'){
+        if(this.activeIndex){
+          document.getElementById(this.activeIndex).className='';
+        }
+        document.getElementById('platform').className='active';
+        this.activeIndex='platform';
+      }
+      if(to.path=='/product/ylctx'){
+        if(this.activeIndex){
+          document.getElementById(this.activeIndex).className='';
+        }
+        document.getElementById('product').className='active';
+        this.activeIndex='product';
+      }
+    }
   },
   beforeDestroy() {},
 };

@@ -40,7 +40,11 @@ export default {
   line-height: 36px;
   text-indent: 32px;
 }
+</style>
+<style>
 img {
-    width: 100%;
+  border: none;
+  vertical-align: middle;
+  max-width: 100%;
 }
 </style>

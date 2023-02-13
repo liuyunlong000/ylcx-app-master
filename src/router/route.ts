@@ -60,7 +60,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
         redirect: '/index'
     }, {
         path: "/index",
-        name: 'Index',
+        name: 'index',
         component: () => import("@/views/index.vue"),
         meta: {
             title: '',
@@ -196,16 +196,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
                 children:[
                     {
                         path: "/technological/",
-                        redirect: '/technological/economic-data'
-                    },
-                    {
-                        path: "/technological/economic-data",
-                        name: 'economic-data',
-                        component: () => import("@/views/technological/components/economic-data.vue"),
-                        meta: {
-                            title: '',
-                            auth: false,
-                        }
+                        redirect: '/technological/industrial-data'
                     },
                     {
                         path: "/technological/industrial-data",

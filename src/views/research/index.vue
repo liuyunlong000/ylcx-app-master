@@ -24,13 +24,7 @@
  export default {
    data() {
      return {
-       subnavList: [
-         { name: "数理研究所", link: "mathematical" },
-         { name: "数据科学研究所", link: "science" },
-         { name: "算法安全研究所", link: "algorithm" },
-         { name: "网络空间研究所", link: "net" },
-         { name: "计算社会学研究所", link: "computational" },
-       ],
+       subnavList: [],
        crumbsList: [
          { name: "首页", link: "/" },
          { name: "科学研究", link: "/research" },

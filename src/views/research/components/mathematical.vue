@@ -27,7 +27,7 @@ export default {
   methods: {},
 };
 </script>
-<style scoped lang="scss">
+<style>
 .cont {
   width: 80%;
   margin: 0 auto;
@@ -35,5 +35,10 @@ export default {
   color: #333333;
   line-height: 36px;
   text-indent: 32px;
+}
+img {
+  border: none;
+  vertical-align: middle;
+  max-width: 100%;
 }
 </style>

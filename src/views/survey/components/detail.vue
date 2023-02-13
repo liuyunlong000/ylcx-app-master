@@ -101,3 +101,10 @@ export default {
   margin-top: 40px;
 }*/
 </style>
+<style>
+img {
+  border: none;
+  vertical-align: middle;
+  max-width: 100%;
+}
+</style>

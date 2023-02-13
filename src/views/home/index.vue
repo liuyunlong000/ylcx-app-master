@@ -8,11 +8,7 @@
           @mouseleave="setTimer"
         >
           <div class="banner" v-for="(item, index) in bannerList" :key="index">
-            <img
-              :src="item.imgUrl"
-              alt=""
-              :class="activeIndex == index ? 'active' : ''"
-            />
+            <a href="javascript:;" :class="activeIndex == index ? 'active' : ''" :style="'background-image: url('+item.imgUrl+');'"></a>
           </div>
         </div>
         <div class="pagination-box">
@@ -48,7 +44,7 @@
             <i></i>
           </div>
         </div>
-        <div class="view-more" @click="viewMore('/news/notice')">
+        <div class="view-more" @click="viewMore('/news/newscore')">
           查看更多
           <img src="/images/index_arr_right.png" alt="" />
         </div>
@@ -181,6 +177,7 @@ export default {
     },
     viewMore(path) {
       this.$router.push(path);
+      window.scrollTo(0,0);
     },
     gotoDetail(active,link,path,item) {
       Cookies.set("active", active);
@@ -257,7 +254,7 @@ export default {
   box-sizing: border-box;
   padding-bottom: 60px !important;
   background: url("/images/bg1.png") no-repeat right;
-  background-size: 68% 100%;
+  background-size: 62% 100%;
   .banner-box {
     height: 100%;
     display: flex;
@@ -273,12 +270,16 @@ export default {
         width: 100%;
         height: 100%;
         position: absolute;
-        img {
-          opacity: 0;
+        a {
+          display: none;
+          height: 100%;
           width: 100%;
-          /*height: 100%;*/
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
         }
         .active {
+          display: inline-block;
           transition: all 0.8s;
           opacity: 1;
         }

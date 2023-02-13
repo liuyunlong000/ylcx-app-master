@@ -7,7 +7,7 @@ import request from '@/utils/request';
  */
 export function scientific_list(data:any) {
     return request({
-        url: '/wzScientificDynamic/find_list_by_page',
+        url: '/wzScientificDynamic/find_list_home',
         method: 'post',
         data
     });

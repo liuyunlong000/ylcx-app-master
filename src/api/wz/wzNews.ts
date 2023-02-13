@@ -7,7 +7,7 @@ import request from '@/utils/request';
  */
 export function news_list(data:any) {
     return request({
-        url: '/wzNews/find_list_by_page',
+        url: '/wzNews/find_list_home',
         method: 'post',
         data,
     });
@@ -26,7 +26,7 @@ export function news_id(id:number) {
  */
 export function notice_list(data:any) {
     return request({
-        url: '/wzNotice/find_list_by_page',
+        url: '/wzNotice/find_list_home',
         method: 'post',
         data,
     });
