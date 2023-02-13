@@ -11,30 +11,12 @@
     <footer>
       <div class="fotter-content">
         <div class="bots-link">
-          <div class="link-box" @mouseover="show('countrylist')" @mouseleave="hide('countrylist')">
-            <div>国家部委网站</div>
+          <div v-for="(item, index) in data" :key="index" class="link-box" @mouseover="show(index)" @mouseleave="hide(index)">
+            <div>{{item.type}}</div>
             <span class="">&gt;</span>
-            <ul class="list" :class="countrylist.isShow?'list-active':''">
-              <li v-for="(item,index) in countrylist.data" :key="index">
-                <a :href="item.href" target="_blank">{{item.name}}</a>
-              </li>
-            </ul>
-          </div>
-          <div class="link-box" @mouseover="show('provinceList')" @mouseleave="hide('provinceList')">
-            <div>省市政府部门网站</div>
-            <span>&gt;</span>
-            <ul class="list" :class="provinceList.isShow?'list-active':''">
-              <li v-for="(item,index) in provinceList.data" :key="index">
-                <a :href="item.href" target="_blank">{{item.name}}</a>
-              </li>
-            </ul>
-          </div>
-          <div class="link-box" @mouseover="show('otherList')" @mouseleave="hide('otherList')">
-            <div>其他相关网站</div>
-            <span>&gt;</span>
-            <ul class="list" :class="otherList.isShow?'list-active':''">
-              <li v-for="(item,index) in otherList.data" :key="index">
-                <a :href="item.href" target="_blank">{{item.name}}</a>
+            <ul class="list" :class="item.isShow?'list-active':''">
+              <li v-for="(_item,_index) in item.list" :key="_index">
+                <a :href="_item.content" target="_blank">{{_item.name}}</a>
               </li>
             </ul>
           </div>
@@ -75,6 +57,8 @@
 </template>
 
 <script>
+import {links_list} from "@/api/wz/wzFriendlyLinks";
+
 export default {
   name: "Bottom",
   data() {
@@ -114,107 +98,27 @@ export default {
 			label: "人才队伍",
 			},
 		],
-		countrylist:{
-			isShow:false,
-			data:[
-				{
-					name:"国家发改委",
-					href:"https://www.ndrc.gov.cn"
-				},
-				{
-					name:"国家科技部",
-					href:"https://www.most.gov.cn/index.html"
-				},
-        {
-          name:"国家自然科学基金委",
-          href:"https://www.nsfc.gov.cn/"
-        },
-        {
-          name:"国家工信部",
-          href:"https://wap.miit.gov.cn/"
-        },
-				{
-					name:"中央政府采购网",
-					href:"https://www.zycg.gov.cn/"
-				}
-			]
-		},
-		provinceList:{
-			isShow:false,
-			data:[
-				{
-					name:"安徽省发改委",
-					href:"http://fzggw.ah.gov.cn/"
-				},
-				{
-					name:"安徽省科技厅",
-					href:"http://kjt.ah.gov.cn/"
-				},
-        {
-          name:"安徽省经信厅",
-          href:"http://jx.ah.gov.cn/"
-        },
-				{
-					name:"安徽省财政厅",
-					href:"http://czt.ah.gov.cn/"
-				},
-				{
-					name:"安徽省教育厅",
-					href:"http://jyt.ah.gov.cn/"
-				},
-        {
-          name:"合肥市发改委",
-          href:"http://drc.hefei.gov.cn/"
-        },
-			]
-		},
-		otherList:{
-			isShow:false,
-			data:[
-        {
-          name:"合肥综合性国家科学中心",
-          href:"http://www.hfcnsc.cn/home/index"
-        },
-				{
-					name:"中国科学技术大学",
-					href:"https://www.ustc.edu.cn/"
-				},
-				{
-					name:"合肥工业大学",
-					href:"http://www.hfut.edu.cn/"
-				},
-        {
-          name:"合肥综合性国家科学中心人工智能研究院",
-          href:"http://iai.ustc.edu.cn/iai/index.html"
-        },
-        {
-          name:"合肥综合性国家科学中心大健康研究院",
-          href:"https://www.ihm.ac.cn/"
-        },
-        {
-          name:"合肥综合性国家科学中心能源研究院",
-          href:"http://www.ie.ah.cn"
-        },
-				{
-					name:"RCDC数据空间研究中心",
-					href:"http://dspace.ustc.edu.cn/"
-				},
-			]
-		}
+    data:[],
 	};
   },
 	components: {},
 	mounted() {
+    links_list().then((response) => {
+      if (response.code === 200) {
+        this.data=response.data;
+      }
+    });
 	},
 	methods: {
 		changeIndex(index){
-			this.$router.push("/"+index)
+			this.$router.push("/"+index);
+      window.scrollTo(0,0);
 		},
 		show(prop){
-			this[prop].isShow = true;
+			this.data[prop].isShow = true;
 		},
     hide(prop){
-      this[prop].isShow = false;
+      this.data[prop].isShow = false;
     }
 	},
 };

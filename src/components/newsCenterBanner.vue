@@ -6,7 +6,7 @@
           <div class="time">{{item.releaseTime}}</div>
           <h3 class="title">{{item.title}}</h3>
           <div class="img">
-            <img :src="item.photo" alt="">
+            <img :src="item.photo" alt="" :onclick="'goto('+item.nid+')'">
           </div>
           <p class="content">{{item.resume}}</p>
         </div>
@@ -33,6 +33,7 @@ Swiper.use([Autoplay, EffectCoverflow, EffectCube, Pagination, Navigation]);
 import "swiper/swiper-bundle.css";
 // swiper.less/sass/css 决定了基础的样式
 import "swiper/swiper.min.css";
+import Cookies from "js-cookie";
 
 export default {
   name: "Home",
@@ -44,8 +45,15 @@ export default {
   },
   mounted() {
     this.getNewsList();
+    window.goto=this.goto;
   },
   methods: {
+     goto(id){
+       Cookies.set("active", 'news');
+       Cookies.set("link", 'newscore');
+       let infoUrl = this.$router.resolve({name: 'newsDetail', query: {id: id}})
+       window.open(infoUrl.href,'_blank')
+     },
     getNewsList(){
       news_list(12).then((response) => {
         if (response.code === 200) {
@@ -161,6 +169,7 @@ export default {
   width: 88.5vw;
   height: 5vw;
   margin: 1vw auto;
+  z-index: 1!important;
   // display:flex;
   ::v-deep .swiper-pagination-bullet{
     // display: block;

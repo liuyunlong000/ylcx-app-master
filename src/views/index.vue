@@ -87,6 +87,7 @@ export default {
         let expires = new Date(new Date() * 1 + seconds * 1000);
         this.activeIndex = val;
         this.$router.push("/" + val);
+        window.scrollTo(0,0);
         /*Cookies.set("active", val, { expires});*/
       }
     },
@@ -185,7 +186,7 @@ export default {
         this.activeIndex='news';
       }
       if(to.path=='/scientific/dynamic'){
-        if(this.activeIndex){
+        if(this.activeIndex && this.activeIndex!='scientific'){
           document.getElementById(this.activeIndex).className='';
         }
         this.activeIndex='';

@@ -66,7 +66,6 @@ export default {
       };
     }else{
       const route=this.$route;
-      debugger
       let _index=0;
       for(let i=0;i<this.subnavList.length;i++){
         if(this.subnavList[i].link==route.name){

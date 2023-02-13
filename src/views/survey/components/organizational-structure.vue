@@ -7,23 +7,27 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-  <div class="cont">
-    <p><img src="/uploads/20220616/d73ada89e22c96e5afd738f9b0b4476b.png" title="" alt=""></p>
-  </div>
+  <div class="cont" v-html="detail.content"></div>
 </template>
 
 <script>
+import {org_id} from "@/api/wz/wzOrg";
+
 export default {
   data () {
     return {
-
+      detail:{}
     }
   },
   components: {
 
   },
   mounted() {
-
+    org_id(1).then((response) => {
+      if (response.code === 200) {
+        this.detail=response.data;
+      }
+    });
   },
   methods: {
 
